@@ -1,3 +1,4 @@
+# File for managing the buzzer
 # Inspiration from http://wiki.micropython.org/Play-Tone
 import time
 import machine

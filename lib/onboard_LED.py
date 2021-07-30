@@ -1,3 +1,4 @@
+# File for managing the onboard pycom LED
 import pycom
 import time
 

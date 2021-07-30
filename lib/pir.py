@@ -1,3 +1,4 @@
+# File for managing the PIR sensor
 # Inspiration from https://docs.pycom.io/tutorials/hardware/pir/
 from machine import Pin
 import time
