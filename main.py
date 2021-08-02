@@ -37,7 +37,7 @@ while True:
         play_alarm()
         LED_off()
     
-    time.sleep(2)
+    time.sleep(3)
 
 # UML: https://app.diagrams.net/
 
