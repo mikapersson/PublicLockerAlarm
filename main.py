@@ -18,38 +18,30 @@ LED_off()
 
 # Some constants
 pir_pin = Pin("P4", mode=Pin.IN)
-#time_frame = 
-detections = []  # detections during time frame, makes detection more robust
 
 # Main Loop
 while True:
     # Check the input from the PIR sensor
-    print("Streak: ", len(detections))
     motion_detected = pir_pin()
 
     # If the PIR sensor detects motion, the alarm goes of and a notification is sent to the owner
     if motion_detected:
         print("DETECTED SOMETHING")
-        detections.append(True)
         LED_alarm()
 
-        # If detection streak is 2 or more
-        if len(detections) > 0:  # changed from 1 to 0 because the alarm was not triggered during the testing
-            # Sending data through sigfox to Pybytes and then to IFTTT through webhook
-            pybytes.send_signal(3, motion_detected)
-            print("Sent detection to Pybytes")
+        # Sending data through Sigfox to Pybytes and then to IFTTT through webhook
+        pybytes.send_signal(3, motion_detected)
+        print("Sent detection to Pybytes")
 
-            # Play alarm
-            play_alarm()
-        
+        # Play alarm
+        play_alarm()
         LED_off()
-    else:
-        # Reset detection streak
-        detections = []
     
     time.sleep(2)
 
-    
+# UML: https://app.diagrams.net/
+
+"""TESTING AREA"""
 # Test buzzer
 # play_alarm()
 
