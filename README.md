@@ -1,4 +1,4 @@
-# Public Locker Alarm
+# Public Locker Alarm :lock:
 IoT project: Public locker alarm device that detects theft.
 
 In short, the device detects if someone opens your locker, sounds an alarm and sends a notification to your phone. 
